@@ -1,0 +1,42 @@
+<div class="container" *ngIf="loc">
+<app-cur-widget [data]="currents" [cityInput]="position['city']"></app-cur-widget>
+<md-card class="row" *ngFor="let card of position['radar']">
+  <md-card-title>
+    {{ card.title }}
+  </md-card-title>
+  <hr>
+  <md-card-content>
+    <img src="{{ card.url }}" alt="{{ card.title }}" style="width:100%">
+  </md-card-content>
+</md-card>
+<md-card class="row forecast">
+  <md-card-title class="row">
+    <h2 class="col-12">{{ position['city'] }} 5 Day Forecast</h2>
+  </md-card-title>
+  <hr>
+  <div class="container">
+    <p>Click Day for More Details.</p>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-lg-2 forecast" *ngFor="let day of forecast; let i = index" style="text-align: center">
+      <a style="cursor:pointer" (click)="openDialog(i)">
+      <h2>{{ (day.time | amFromUnix) | amDateFormat:'ddd' }}</h2>
+      <hr>
+      <canvas #skyconForecast height="150px" width="150px"></canvas>
+      <p class="high no-gutters">High: {{day.high}}&deg;F</p>
+      <p class="low">Low: {{day.low}}&deg;F</p>
+      <p class="pops">Precip: {{day.pops}}%</p>
+      <hr>
+      </a>
+    </div>
+  </div>
+  <p>Forecast and Currents <a href="https://darksky.net/poweredby/">Powered by DarkSky</a></p>
+</md-card>
+</div>
+<div *ngIf="!loc && !errorDisp" class="justify-content-center">
+  <h1 style="text-align: center"> Looking Outside</h1>
+  <div id="loader"></div>
+</div>
+<div class="container" *ngIf="errorDisp">
+<h1>{{errorDisp}}</h1>
+</div>

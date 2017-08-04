@@ -1,0 +1,30 @@
+<div class="container">
+  <md-card *ngFor="let card of cards, let i = index">
+    <div class="container">
+      <div class="row">
+        <md-card-title>
+          {{card.title}}
+        </md-card-title>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-md-{{12/card.content.length}} my-auto ml-auto" *ngFor="let sub of card.content, let j=index">
+          <h4>{{sub.header}}</h4>
+          <a style="cursor:pointer" (click)="openDialog(i,j)">
+          <img src="{{sub.url}}" alt="{{sub.alt}}" class="img-thumbnail">
+          </a>
+        </div>
+        <div class="row" style="padding-top: 10px;" *ngIf="card.extraContent">
+          <div class="col-xs-12 col-md-{{12/card.extraContent.length}} my-auto ml-auto" *ngFor="let sub of card.extraContent, let j=index">
+            <h4>{{sub.header}}</h4>
+            <div class="my-auto">
+              <a style="cursor:pointer" (click)="openDialog(i, j, true)">
+              <img src="{{sub.url}}" alt="{{sub.alt}}" class="img-thumbnail" style="margin: auto;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </md-card>
+</div>

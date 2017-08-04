@@ -1,0 +1,28 @@
+@media only screen and (max-width:768px) {
+  .banner {
+    height: 100% !important;
+  }
+}
+.banner{
+  height: 400px;
+  background-image: url('/assets/img/sunflare.jpg');
+  background-position: center;
+  background-size:  100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.overlay {
+  background-color: rgba(65,199,243,0.7);
+  width: 60%;
+  padding: 15px;
+}
+.container {
+  padding-bottom: 10px;
+}
+.sidebar {
+  margin-bottom: 10px;
+  margin-left: 0px !important;
+}
+.collection{
+  margin:10px;
+}

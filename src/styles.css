@@ -1,1 +1,51 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width:992px) {
+  .navbar-brand {
+    /*display: block !important;*/
+    margin: auto !important;
+  }
+}
+
+body {
+  background-color: #FFF !important;
+  color: rgb(15,59,101) !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+header {
+  background-color: rgb(137,200,55);
+  color: rgb(15,59,101);
+}
+header a {
+  color: rgb(15,59,101);
+}
+header li {
+  font-family: 'PT Sans', sans-serif !important;
+  font-size: 1.25em !important;
+}
+footer {
+  margin-top: 10px;
+  padding-top: 5px;
+  background-color: rgb(137,200,55);
+  color: rgb(15,59,101);
+  font-family: 'PT Sans', sans-serif;
+}
+
+h1 h2 h3 {
+  font-family: 'PT Sans', sans-serif;
+}
+
+md-card-title {
+  font-size: 2em !important;
+  font-family: 'PT Sans', sans-serif !important;
+  color: rgba(65,199,243,0.7) !important;
+}
+
+md-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  color: rgb(15,59,101) !important;
+  /*background-color: rgba(65,199,243,0.7) !important;*/
+  color: #FFF;
+}

@@ -1,0 +1,68 @@
+<div class="banner row col-xs">
+  <div class="overlay float-right">
+    <h1>Welcome!</h1>
+    <p>Welcome to the renovated NathansWeather.com! This page is now powered by Google's Angular framework giving it much more power and speed than before. I'm hard at work adding new features, and making everything better than before! However, this is a
+      process, so please excuse some dust while I work on renovations and housekeeping.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row" style="padding-top: 10px">
+    <div class="col-xs-12 col-md-8 main">
+      <md-card>
+        <md-card-header>
+          <md-card-title>
+            Upcoming Updates
+          </md-card-title>
+        </md-card-header>
+        <hr>
+        <md-card-content>
+          <p>Some things I'm working on to make this a great weather site.</p>
+          <ol>
+            <li>Add an automated forecast tab to pull NWS data (I'll still be doing hand forecasts though)</li>
+            <li>Add the ability to zoom in on images by clicking them</li>
+            <li>Update the travel section to continue to bring top-notch travel weather</li>
+            <li>Add a severe weather climatology tab</li>
+            <li>Add more fun features to the site!</li>
+          </ol>
+        </md-card-content>
+      </md-card>
+      <md-card>
+        <div class="container">
+          <md-card-header>
+            <md-card-title>
+              <div class="row">
+                WX Photos
+              </div>
+            </md-card-title>
+          </md-card-header>
+          <hr>
+          <md-card-content>
+            <div class="container">
+              <p>Here is a random collection of weather photos that I've taken</p>
+            </div>
+            <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xs-4 my-auto collection" *ngFor="let photo of images, let i=index">
+                <img class="img-thumbnail" src="{{photo.thumb}}" alt="{{photo.alt}}" (click)="openDialog(i)" style="cursor:pointer;max-width:180px">
+              </div>
+            </div>
+            </div>
+          </md-card-content>
+        </div>
+      </md-card>
+    </div>
+    <div class="col-md-4 hidden-sm-down sidebar no-gutters">
+      <md-card class="twitterfeed">
+        <md-card-header>
+          <md-card-title style="text-align: right;">
+            My Twitter Feed <a href="https://twitter.com/theNewWx" class="twitter-follow-button" data-show-count="false">Follow @theNewWx</a>
+          </md-card-title>
+        </md-card-header>
+        <hr>
+        <div class="timeline">
+          <a class="twitter-timeline" href="https://twitter.com/theNewWX" data-height="600px">Tweets by theNewWX</a>
+        </div>
+      </md-card>
+    </div>
+  </div>
+</div>

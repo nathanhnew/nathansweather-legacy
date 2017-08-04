@@ -1,0 +1,26 @@
+.container{
+  color: rgb(15,59,101) !important;
+}
+.skycon-container{
+  margin: auto !important;
+  width: 300px !important;
+}
+.title{
+  color: rgba(65,199,243,0.7) !important;
+}
+#high{
+  font-size: 3em;
+  color: rgba(255,0,0,.7) !important;
+}
+#low {
+  font-size: 2em;
+  color: rgba(65,199,243,0.7) !important;
+  margin-top: 10px;
+}
+#sun{
+  font-size: 0.75em;
+  margin-top: 15px;
+}
+#lower{
+  margin-top: 20px;
+}

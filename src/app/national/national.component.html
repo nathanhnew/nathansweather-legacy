@@ -1,0 +1,24 @@
+<div class="container">
+  <md-card class="row">
+    <md-card-title>
+      Current Time
+    </md-card-title>
+    <hr>
+    <md-card-content *ngIf="theTime">
+      <strong>
+        {{ theTime | amUtc | amDateFormat: 'H:mm:ss'}} UTC
+      </strong><br /> {{ theTime | date: 'h:mm:ss a z'}}
+    </md-card-content>
+  </md-card>
+  <md-card class="row" *ngFor="let card of eachCard, let i=index">
+    <md-card-title>
+      {{ card.title }}
+    </md-card-title>
+    <hr>
+    <md-card-content>
+      <a style="cursor:pointer" (click)="openDialog(i)">
+      <img src="{{ card.url }}" alt="{{ card.alt }}" style="width:100%">
+      </a>
+    </md-card-content>
+  </md-card>
+</div>

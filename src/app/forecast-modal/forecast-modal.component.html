@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 class="title" md-dialog-title>
+  <h1>
+  {{ (data.time | amFromUnix) | amDateFormat:"dddd, MMM D"}}
+  <button md-dialog-close type="button" class="close pull-right align-center" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </h1>
+  </h1>
+  <hr>
+  <md-dialog-content>
+    <div class="row" id="upper">
+      <div class="col-xs-12 col-md-6">
+        <div class="skycon-container">
+          <canvas #skycon height="300px" width="300px">
+        {{data.icon}}
+      </canvas>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 my-auto">
+        <div class="row justify-content-center">
+          <h2 id="high">High: {{data.high}}&deg;F</h2>
+        </div>
+        <div class="row justify-content-center">
+          <h2 id="low">Low: {{data.low}}&deg;F</h2>
+        </div>
+        <div id="sun" class="row justify-content-center hidden-sm-down" *ngIf="data['sunrise'] && data['sunset']">
+          <div class="col-xs-12 mx-auto">
+            <p>Sunrise: {{(data.sunrise | amFromUnix) | amDateFormat:"h:mm a"}} &uarr;
+            </p>
+            <p>Sunset: {{(data.sunset | amFromUnix) | amDateFormat:"h:mm a"}} &darr;
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="lower">
+      <div class="col-xs-12 col-md-6 flex-md-last text-center my-auto">
+        <h3>Precip: {{data.pops}} %</h3>
+        <h3 *ngIf="data['clouds']" >Cloud Cover: {{data.clouds}}</h3>
+        <h3 *ngIf="data['dewpoint']" >Dewpoint: {{data.dewpoint}}&deg;F</h3>
+        <h3 *ngIf="data['humidity']" >Humidity: {{data.humidity}}%</h3>
+      </div>
+      <div class="col-xs-12 col-md-6 text-center my-auto">
+        <h2>Forecast:</h2>
+        <p>{{data.summary}}</p>
+      </div>
+    </div>
+  </md-dialog-content>
+</div>

@@ -1,0 +1,9 @@
+.center{
+  text-align: center;
+}
+.cold{
+  color: rgba(65,199,243,0.7);
+}
+.hot{
+  color: rgba(255,0,0,.7);
+}

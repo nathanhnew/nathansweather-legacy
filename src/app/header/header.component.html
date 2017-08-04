@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md" (clickOutside)="closeAll()">
+  <button class="navbar-toggler navbar-toggler-left" type="button" (click)="expandNav()">
+    <fa name="bars" class="bars"></fa>
+  </button>
+  <a routerLink='home' class="navbar-brand">
+  <img src="assets/img/logo.png" alt="NathansWeather.com" style="cursor:pointer" height="40px">
+</a>
+  <!-- <a routerLink="home" class="navbar-brand" style="cursor:pointer">Nathan's Weather</a> -->
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav" [collapse]="navHidden">
+    <ul class="nav navbar-nav">
+      <li class="nav-item" routerLinkActive="active"><a routerLink="home" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a class="nav-link dropdown-toggle" id="currentsDropdownNavLink" style="cursor:pointer" (click)="expandOne('currents')">Currents</a>
+        <div class="dropdown-menu" aria-labelledby="currentsDropdownNavLink" [collapse]="hidden['currents']">
+          <a routerLink="local" class="dropdown-item">Local</a>
+          <a routerLink="national" class="dropdown-item">National</a>
+        </div>
+      </li>
+      <!-- <li class="nav-item" routerLinkActive="active"><a routerLink="travel" class="nav-link">Travel</a></li> -->
+      <li class="nav-item dropdown" routerLinkActive="active" *ngFor="let loc of locations" >
+        <a class="nav-link dropdown-toggle" id="{{loc.url}}DropdownNavLink" style="cursor:pointer" (click)="expandOne(loc.url)">{{ loc.name }}</a>
+        <div class="dropdown-menu" [collapse]="hidden[loc.url]">
+          <a [routerLink]="['city',loc.url]" class="dropdown-item">Currents</a>
+          <a [routerLink]="['city',loc.url,'discussion']" class="dropdown-item">Discussion</a>
+          <a [routerLink]="['city',loc.url,'forecast']" class="dropdown-item">Forecast</a>
+        </div>
+      </li>
+      <li class="nav-item" routerLinkActive="active"><a routerLink="tropics" class="nav-link">Tropics</a></li>
+      <li class="nav-item" routerLinkActive="active"><a routerLink="severe" class="nav-link">Severe</a></li>
+      <li class="nav-item" routerLinkActive="active"><a routerLink="about" class="nav-link">About</a></li>
+    </ul>
+  </div>
+</nav>

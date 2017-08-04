@@ -1,0 +1,20 @@
+<div class="row">
+  <h1 md-dialog-title>
+    <div class="container">
+  {{data.title ? data.title : data.header}}
+  <button md-dialog-close type="button" class="close pull-right align-center" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  </h1>
+</div>
+  <hr>
+<div class="row justify-content-center">
+  <md-dialog-content>
+    <div class="container">
+    <div class="col-12">
+      <img src="{{data.url}}" alt="{{data.alt ? data.alt : data.title}}" width="100%">
+    </div>
+    </div>
+  </md-dialog-content>
+</div>
