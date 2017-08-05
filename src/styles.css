@@ -1,9 +1,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
-@media only screen and (max-width:992px) {
+@media (max-width:992px) {
   .navbar-brand {
     /*display: block !important;*/
-    margin: auto !important;
+    margin-left: auto !important;
   }
 }
 
