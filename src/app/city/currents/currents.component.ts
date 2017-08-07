@@ -11,17 +11,14 @@ import { City } from '../../models/city.model';
 })
 export class CurrentsComponent implements OnInit {
   city: City;
-  siteInfo: any;
   constructor(private route: ActivatedRoute, private cityService: CityService) { }
 
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
         this.city = this.cityService.getLocation(params['city']);
-        this.siteInfo = this.cityService.serializeInfo(params['city']);
       }
     )
-
   }
 
 

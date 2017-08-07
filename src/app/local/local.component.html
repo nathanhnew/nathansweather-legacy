@@ -6,7 +6,7 @@
   </md-card-title>
   <hr>
   <md-card-content>
-    <img src="{{ card.url }}" alt="{{ card.title }}" style="width:100%">
+    <app-leaflet-map [coords]="[position['lat'],position['lon']]"></app-leaflet-map>
   </md-card-content>
 </md-card>
 <md-card class="row forecast">

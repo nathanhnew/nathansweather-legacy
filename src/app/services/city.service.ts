@@ -15,21 +15,4 @@ export class CityService {
     var index = this.cities.findIndex(i => i.url === url)
     return this.cities[index]
   }
-
-  serializeInfo(url: string){
-    var index = this.cities.findIndex(i => i.url === url)
-    var loc = this.cities[index]
-    return [
-      {
-        'title': loc.name+' Radar',
-        'img': 'https://radar.weather.gov/lite/N0R/'+loc.radar.slice(1)+'_loop.gif',
-        'alt': loc.radar+' Current Radar'
-      },
-      {
-        'title': loc.name+' Visible Satellite',
-        'img': '/assets/img/satellite/'+loc.region+'.jpg',
-        'alt': loc.name+' Visible Satellite'
-      }
-    ]
-  }
 }

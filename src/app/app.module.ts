@@ -43,6 +43,7 @@ import { AboutComponent } from './about/about.component';
 import { CurWidgetComponent } from './cur-widget/cur-widget.component';
 import { ForecastModalComponent } from './forecast-modal/forecast-modal.component';
 import { ImageModalComponent } from './image-modal/image-modal.component';
+import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { ImageModalComponent } from './image-modal/image-modal.component';
     CurWidgetComponent,
     ForecastModalComponent,
     ImageModalComponent,
+    LeafletMapComponent,
   ],
   imports: [
     BrowserModule,

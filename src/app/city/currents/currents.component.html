@@ -1,12 +1,21 @@
 <div class="container">
   <app-cur-widget></app-cur-widget>
-  <md-card class="row" *ngFor="let card of siteInfo">
+  <md-card class="row">
     <md-card-title>
-      {{ card.title }}
+      {{ city.name }}
     </md-card-title>
     <hr>
     <md-card-content>
-      <img src="{{ card.img }}" alt="{{ card.alt }}" style="width:100%">
+      <app-leaflet-map [coords]=[city.lat,city.lon]></app-leaflet-map>
+    </md-card-content>
+  </md-card>
+  <md-card class="row">
+    <md-card-title>
+      {{ city.name }} Satellite
+    </md-card-title>
+    <hr>
+    <md-card-content>
+      <img src="/assets/img/satellite/{{city.region}}.jpg" alt="{{ city.name }} Visible Satellite" style="width:100%">
     </md-card-content>
   </md-card>
 </div>
